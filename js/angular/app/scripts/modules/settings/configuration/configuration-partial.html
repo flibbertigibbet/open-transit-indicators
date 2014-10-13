@@ -23,7 +23,13 @@
                 <input type="text" class="form-control" datepicker-popup="{{datepickerFormat}}"
                        ng-model="weekdayDate" is-open="weekdayPickerOpen" show-weeks="false"
                        datepicker-options="dateOptions" ng-required="true" close-text="Close"
+<<<<<<< Updated upstream
                        date-disabled="disableWeekend(date, mode)" name="weekdayDate" ng-change="validateWeekday()" />
+=======
+                       min="serviceStart" max="serviceEnd" refresh-thingee="serviceStart"
+                       date-disabled="disableWeekend(date, mode)" name="weekdayDate" 
+                       ng-change="validateWeekday()" />
+>>>>>>> Stashed changes
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default" ng-click="openWeekdayPicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                 </span>
