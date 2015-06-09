@@ -290,8 +290,8 @@ npm install -g bower grunt-cli yo generator-angular
 
 # Install ruby gems
 echo 'Installing ruby gems dependencies'
-gem install -v 3.3.4 sass
-gem install -v 0.12.5 compass
+gem install -v 3.4.14 sass
+gem install -v 1.0.3 compass
 
 #########################
 # Database setup        #

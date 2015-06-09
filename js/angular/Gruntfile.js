@@ -55,7 +55,7 @@ module.exports = function (grunt) {
       },
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: ['compass:server', 'postcss']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -140,15 +140,19 @@ module.exports = function (grunt) {
     },
 
     // Add vendor prefixed styles
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: ['last 1 version']
+        map: true,
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 1 version'}),
+          require('csswring')
+        ]
       },
       dist: {
         files: [{
           expand: true,
           cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
+          src: ['**/*.css'],
           dest: '.tmp/styles/'
         }]
       }
@@ -395,7 +399,7 @@ module.exports = function (grunt) {
       'clean:server',
       'bowerInstall',
       'concurrent:server',
-      'autoprefixer',
+      'postcss',
       'connect:livereload',
       'watch'
     ]);
@@ -409,7 +413,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:server',
     'concurrent:test',
-    'autoprefixer',
+    'postcss',
     'connect:test',
     'karma'
   ]);
@@ -418,8 +422,12 @@ module.exports = function (grunt) {
     'clean:dist',
     'bowerInstall',
     'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
+    //'concurrent:dist',
+    'compass:dist',
+    'imagemin',
+    'svgmin',
+    ///////////////
+    'postcss',
     'concat',
     'ngmin',
     'copy:dist',
