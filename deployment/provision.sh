@@ -144,7 +144,10 @@ apt-get install -y python-software-properties
 
 add-apt-repository -y ppa:mapnik/v2.2.0
 add-apt-repository -y ppa:gunicorn/ppa
-add-apt-repository -y ppa:chris-lea/node.js
+
+# NodeSource nodejs v0.12 PPA
+# https://nodesource.com/blog/nodejs-v012-iojs-and-the-nodesource-linux-repositories#installing-node-js-v0-12
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 
 if [ "$INSTALL_TYPE" == "travis" ]; then
     echo "Installing packages for Travis..."
@@ -194,9 +197,6 @@ else
         monit
 
 fi
-
-## update npm
-npm -g install npm@2.1.2
 
 #### build postgis and friends #############
 # http://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS21Ubuntu1204src

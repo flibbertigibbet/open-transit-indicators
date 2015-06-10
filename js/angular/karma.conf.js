@@ -37,10 +37,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'app/bower_components/bind-polyfill/index.js',
       'app/bower_components/jquery/dist/jquery.min.js',
       'app/bower_components/underscore/underscore.js',
       'app/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js',
-      'app/bower_components/leaflet/dist/leaflet.js',
+      'app/bower_components/leaflet-dist/leaflet.js',
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-animate/angular-animate.js',
       'app/bower_components/angular-route/angular-route.js',
@@ -55,6 +56,9 @@ module.exports = function(config) {
       'app/bower_components/angular-translate/angular-translate.min.js',
       'app/bower_components/angular-translate-handler-log/angular-translate-handler-log.min.js',
       'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+      'app/bower_components/angular-translate-storage-local/angular-translate-storage-local.js',
+      'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js'
+      'app/bower_components/ng-file-upload/ng-file-upload-shim.js',
       'app/bower_components/ng-file-upload/angular-file-upload.min.js',
       'app/bower_components/angular-jquery/dist/angular-jquery.js',
       'app/bower_components/angular-bootstrap-affix/dist/angular-bootstrap-affix.js',

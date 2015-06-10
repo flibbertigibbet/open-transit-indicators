@@ -3,7 +3,7 @@
  *  Sample, trivial, test for polling upload directive
  *  Unfortunately, all of the testable actions in the directive key off
  *  of private methods that trigger when the startUpload function is called in
- *  the angular-file-upload directive. I was unable to find a way to call this method
+ *  the ng-file-upload directive. I was unable to find a way to call this method
  *  directly, with mocked or actual file data. It is not possible to inject a file object
  *  into <input type="file"> elements, as this would be a large security hole.
  *

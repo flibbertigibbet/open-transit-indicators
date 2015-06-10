@@ -7,7 +7,7 @@ Upload param must be a $resource object, defined with a unique 'id' field
 The default state for this directive is displaying an "upload file" div
 
 Dependencies:
-https://github.com/danialfarid/angular-file-upload
+https://github.com/danialfarid/ng-file-upload
 
 Required Params:
   - url:        URL to post the file upload to. This will likely be the same as the URL contained
@@ -193,7 +193,7 @@ $rootScope:                         (event args)
                  *      on success
                  *
                  *  @param $files: The array of files to upload, directly copied from
-                 *                 the angular-file-upload directive
+                 *                 the ng-file-upload directive
                  */
                 scope.startUpload = function ($files) {
                     if (!($files && $files[0])) {

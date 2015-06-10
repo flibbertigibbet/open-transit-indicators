@@ -5,7 +5,7 @@ angular.module('transitIndicators', [
     'ngCookies',
     'ngResource',
     'ui.router',
-    'angularFileUpload',
+    'ngFileUpload',
     'pascalprecht.translate',
     'leaflet-directive',
     'ui.bootstrap',
@@ -166,12 +166,17 @@ angular.module('transitIndicators', [
     * nut -> Nung (Viet Nam)
     */
 
-    $translateProvider.useCookieStorage();
+    $translateProvider.useLocalStorage();
     $translateProvider.storageKey('openTransitLanguage');
 
     var languageUsing = (_.contains(_.values(config.languages), languageActual) ? languageActual : config.defaultLanguage);
     $translateProvider.preferredLanguage(languageUsing);
     $translateProvider.fallbackLanguage('en');
+
+    // TODO: enable sanitization
+    // http://angular-translate.github.io/docs/#/guide/19_security
+    //$translateProvider.useSanitizeValueStrategy('sanitize');
+
 }]).config(['$logProvider', function($logProvider) {
     $logProvider.debugEnabled(true);
 }]).run(['$cookies', '$http', '$rootScope', '$state', 'authService', 'OTIEvents',
