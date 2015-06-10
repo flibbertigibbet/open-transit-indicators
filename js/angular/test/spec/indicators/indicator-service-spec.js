@@ -14,10 +14,12 @@ describe('Service: Indicators', function () {
     describe('IndicatorsConfig tests', function () {
         it('should have version, sample_period, type, aggregation properties by default', function () {
             var indicator = indicatorsService.getConfig();
+            /*jshint camelcase:false */
             expect(indicator.calculation_job).toBeDefined();
             expect(indicator.type).toBeDefined();
             expect(indicator.aggregation).toBeDefined();
             expect(indicator.sample_period).toBeDefined();
+            /*jshint camelcase:true */
         });
     });
 
@@ -37,7 +39,9 @@ describe('Service: Indicators', function () {
         it('should hit the /api/indicator-types/ endpoint', function () {
 
             $httpBackend.expect('GET', '/api/indicator-types/').respond({
+                /*jshint camelcase:false */
                 num_stops: 'Number of Stops'
+                /*jshint camelcase:true */
             });
 
             // Need these two expects because the authenticate() call fires a

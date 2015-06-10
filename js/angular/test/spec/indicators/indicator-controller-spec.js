@@ -26,7 +26,9 @@ describe('OTIIndicatorsController', function () {
     });
 
     it('should have sample_periods properties', function () {
+        /*jshint camelcase:false */
         expect(scope.sample_periods).toBeDefined();
+        /*jshint camelcase:true */
     });
 
     it('should set $scope.mapActive when $stateChangeSuccess is fired', function () {
