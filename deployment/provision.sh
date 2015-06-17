@@ -77,7 +77,7 @@ OTI_CATALOG_ROOT="$SCALA_OTI_ROOT/data"
 SBT_MEM_MB=5600      # For the opentransit spray service upstart job
 RABBIT_MQ_HOST="127.0.0.1"
 RABBIT_MQ_PORT="5672"
-TRANSITFEED_VERSION=1.2.13
+TRANSITFEED_VERSION=1.2.15
 
 # TODO: Change user emails?
 APP_SU_USERNAME="oti-admin"
@@ -809,6 +809,9 @@ echo "Setting time zone..."
 export tz=`wget -qO - http://geoip.ubuntu.com/lookup | sed -n -e 's/.*<TimeZone>\(.*\)<\/TimeZone>.*/\1/p'` &&  timedatectl set-timezone $tz
 export tz=`timedatectl status | grep 'Time zone' | awk '{print $3}'`
 echo "Time zone set to $tz"
+
+# select last_login from userdata_otiuser where username='oti-admin';
+# null on django 1.8 or greater if first login (earlier versions set to current timestamp)
 
 # Also remind user to set their timezone interactively
 echo ''
