@@ -177,8 +177,8 @@ class Scenario(models.Model):
     # Optional scenario to base this scenario off of
     base_scenario = models.ForeignKey('self', blank=True, null=True, to_field='db_name')
 
-    create_date = models.DateTimeField(auto_now_add=True, default=datetime.now)
-    last_modify_date = models.DateTimeField(auto_now=True, default=datetime.now)
+    create_date = models.DateTimeField(auto_now_add=True)
+    last_modify_date = models.DateTimeField(auto_now=True)
     job_status = models.CharField(max_length=10, choices=StatusChoices.CHOICES)
     sample_period = models.ForeignKey(SamplePeriod)
     created_by = models.ForeignKey(OTIUser)

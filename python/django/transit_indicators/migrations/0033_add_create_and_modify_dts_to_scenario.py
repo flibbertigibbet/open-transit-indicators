@@ -15,13 +15,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='scenario',
             name='create_date',
-            field=models.DateTimeField(default=datetime.datetime.now, auto_now_add=True),
-            preserve_default=True,
+            field=models.DateTimeField(auto_now_add=True)
         ),
         migrations.AddField(
             model_name='scenario',
             name='last_modify_date',
-            field=models.DateTimeField(default=datetime.datetime.now, auto_now=True),
-            preserve_default=True,
+            field=models.DateTimeField(auto_now=True)
         ),
     ]
